@@ -1,0 +1,77 @@
+body {
+  background-color: #212632;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  font-family: "Manrope", sans-serif;
+}
+
+.advice {
+  width: 380px;
+  max-width: 500px;
+  height: fit-content;
+  background-color: #303a49;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 25px;
+  text-align: center;
+  padding: 10px 50px;
+  position: relative;
+}
+
+.attribution {
+  color: white;
+  font-size: 12px;
+  margin-top: 50px;
+}
+
+.attribution a {
+  color: white;
+}
+
+h1 {
+  font-size: 13px;
+  text-transform: uppercase;
+  color: hsl(150, 100%, 66%);
+  margin-top: 30px;
+  letter-spacing: 3px;
+  font-weight: 600;
+  padding-bottom: 20px;
+}
+
+#quote {
+  font-size: 28px;
+}
+
+.divider {
+  margin: 40px;
+}
+
+.dice {
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  background-color: hsl(150, 100%, 66%);
+  border-radius: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  top: 90%;
+}
+
+.dice img {
+  margin-top: 15px;
+}
+
+@media screen and (max-width: 800px) {
+  .advice {
+    width: 85%;
+    padding: 15px;
+  }
+}

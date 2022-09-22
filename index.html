@@ -1,28 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Advice generator app</title>
+    <title>Frontend Mentor | Advice generator app</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <script>
+      const apiUrl = "https://api.adviceslip.com/advice";
+      axios.get(apiUrl).then(handleResponse);
 
-  Advice #<!-- Advice ID goes here -->
+      function handleResponse(props) {
+        let adviceID = props.data.slip.id;
+        let adviceQuote = props.data.slip.advice;
+        let h1 = document.querySelector("h1");
+        let quote = document.getElementById("quote");
 
-  "<!-- Advice text goes here -->"
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+        h1.innerHTML = `Advice #${adviceID}`;
+        quote.innerHTML = `"${adviceQuote}"`;
+      }
+    </script>
+  </head>
+  <body>
+    <main class="advice">
+      <h1></h1>
+      <span id="quote">quote</span>
+      <img
+        src="./images/pattern-divider-desktop.svg"
+        alt="divider"
+        class="divider"
+      />
+      <div class="dice"><img src="./images/icon-dice.svg" alt="dice icon" /></div>
+      
+    </main>
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://github.com/samantha-lind">Samantha Lind</a>.
+    </footer>
+  </body>
 </html>
